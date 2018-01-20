@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.queue</groupId>
+    <artifactId>spring-delayqueue</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.queue</groupId>
+  <artifactId>queue-web-gateway</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>queue-web-gateway Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  	<properties>
+		<java-version>1.8</java-version>
+	</properties>
+  
+  <dependencies>
+  
+    <dependency>
+		<groupId>com.queue</groupId>    
+		<artifactId>queue-app-service</artifactId>    
+		<version>${project.parent.version}</version>    
+	</dependency>
+	
+	<!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<exclusions>
+			<!-- Exclude Commons Logging in favor of SLF4j -->
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			 </exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+	</dependency>
+ 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	</dependency>
+  	<!-- Logging -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+	</dependency>
+	<!-- common-logging 实际调用slf4j --> 
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jcl-over-slf4j</artifactId>
+		<scope>runtime</scope>
+	</dependency>
+	<!-- java.util.logging 实际调用slf4j -->  
+    <dependency>  
+        <groupId>org.slf4j</groupId>  
+        <artifactId>jul-to-slf4j</artifactId>  
+        <scope>runtime</scope>  
+    </dependency> 
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.bgee.log4jdbc-log4j2</groupId>
+	    <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-api</artifactId>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	</dependency>
+	<!-- Servlet -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	</dependency>	
+	<dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>com.baomidou</groupId>
+	    <artifactId>mybatis-plus-core</artifactId>
+	</dependency>
+
+  </dependencies>
+  <build>
+    <finalName>queue-web-gateway</finalName>
+    <plugins>
+    	<!-- 아래 3개 maven플러긴 필수로 넣어주기 메이븐 업로드시 지정한 자바버전 유지해주는역할 및 기타 -->
+	    <plugin>
+	        <artifactId>maven-eclipse-plugin</artifactId>
+	        <version>2.9</version>
+	        <configuration>
+	            <additionalProjectnatures>
+	                <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+	            </additionalProjectnatures>
+	            <additionalBuildcommands>
+	                <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+	            </additionalBuildcommands>
+	            <downloadSources>true</downloadSources>
+	            <downloadJavadocs>true</downloadJavadocs>
+	        </configuration>
+	    </plugin>
+	    <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.6.1</version>
+	        <configuration>
+	            <source>${java-version}</source>
+	            <target>${java-version}</target>
+	            <compilerArgument>-Xlint:all</compilerArgument>
+	            <showWarnings>true</showWarnings>
+	            <showDeprecation>true</showDeprecation>
+	        </configuration>
+	    </plugin>
+	</plugins>
+  </build>
+</project>
