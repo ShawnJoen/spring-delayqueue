@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.order.dao.impl.OrderDaoImpl">
+
+ 	<insert id="insertOrder" parameterType="com.queue.order.dto.Order">
+	INSERT INTO `Order`(`id`,`orderTransactionNo`,`productName`,`status`,`createTime`) 
+		VALUES (#{id}, #{orderTransactionNo}, #{productName}, #{status}, #{createTime})
+	</insert>
+
+	<select id="getOrderById" parameterType="Long" resultType="com.queue.order.dto.Order">
+		SELECT `id`,`orderTransactionNo`,`productName`,`status`,`createTime` FROM `Order` WHERE `id`=#{orderId}
+	</select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package com.queue.order.service;
+package com.queue.utils.message;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;

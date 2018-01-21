@@ -1,0 +1,3 @@
+[2018-01-21 17:13:24:283] [DEBUG] [method:org.springframework.core.io.support.PropertiesLoaderSupport.loadProperties(PropertiesLoaderSupport.java:174)]
+Loading properties file from class path resource [config/env.properties]
+

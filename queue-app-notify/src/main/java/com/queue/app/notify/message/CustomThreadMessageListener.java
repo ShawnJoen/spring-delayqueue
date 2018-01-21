@@ -1,4 +1,4 @@
-package com.queue.app.notify;
+package com.queue.app.notify.message;
 
 import javax.jms.*;
 import org.apache.activemq.command.ActiveMQTextMessage;
@@ -6,11 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.queue.order.vo.OrderVO;
+import com.queue.notify.dto.NotifyRecord;
 
 public class CustomThreadMessageListener implements MessageListener {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CustomThreadMessageListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(CustomThreadMessageListener.class);
 
 	public void onMessage(Message message) {
 		
@@ -19,12 +19,12 @@ public class CustomThreadMessageListener implements MessageListener {
 	        final String jsonString = msg.getText();
 
 	        JSON jsonData = (JSON)JSONObject.parse(jsonString);
-	        OrderVO orderVO = JSONObject.toJavaObject(jsonData, OrderVO.class);
-            if (orderVO == null) {
+	        NotifyRecord notifyRecord = JSONObject.toJavaObject(jsonData, NotifyRecord.class);
+            if (notifyRecord == null) {
                 return;
             }
             
-	        System.out.println(orderVO);
+	        System.out.println(notifyRecord);
 	        
         } catch (JMSException e) {
             e.printStackTrace();

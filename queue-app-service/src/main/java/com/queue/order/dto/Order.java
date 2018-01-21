@@ -1,16 +1,22 @@
-package com.queue.order.vo;
+package com.queue.order.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class OrderVO implements Serializable {
-	
+public class Order implements Serializable {
 	private static final long serialVersionUID = -2443925280636977778L;
+	private Long id;//订单编号
 	private String orderTransactionNo;//交易流水号26位
 	private String productName;
 	private String status;
-	private String createTime;
+	private Date createTime;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getOrderTransactionNo() {
 		return orderTransactionNo;
 	}
@@ -29,15 +35,15 @@ public class OrderVO implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getCreateTime() {
+	public Date getCreateTime() {
 		return createTime;
 	}
-	public void setCreateTime(String createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 	@Override
 	public String toString() {
-		return "OrderVO [orderTransactionNo=" + orderTransactionNo + ", productName=" + productName + ", status="
-				+ status + ", createTime=" + createTime + "]";
+		return "Order [id=" + id + ", orderTransactionNo=" + orderTransactionNo + ", productName=" + productName
+				+ ", status=" + status + ", createTime=" + createTime + "]";
 	}
 }

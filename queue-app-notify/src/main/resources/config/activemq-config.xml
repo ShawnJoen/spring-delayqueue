@@ -42,7 +42,7 @@
 	</bean>
 	
 	<!-- 消息监听器 -->
-   	<bean id="consumerMessageListener" class="com.queue.app.notify.CustomThreadMessageListener"/>
+   	<bean id="consumerMessageListener" class="com.queue.app.notify.message.CustomThreadMessageListener"/>
 	
 	<!-- 消息监听容器 -->
    	<bean id="ListenerContainer"
