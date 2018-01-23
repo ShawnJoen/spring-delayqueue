@@ -11,5 +11,5 @@ public interface IdGenerator {
 
 	Long getOrderId();
 	
-	Long getNotifyId();
+	Long getOrderPollingId();
 }

@@ -1,19 +1,20 @@
-package com.queue.notify.dto;
+package com.queue.orderpolling.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class NotifyRecord implements Serializable {
+public class OrderPollingRecord implements Serializable {
 	private static final long serialVersionUID = 9041484953450585661L;
+	
 	private Long id;
 	private Date createTime;
 	private Date editTime;
-	private int notifyTimes;
-	private int notifyLimitTimes;
+	private int pollingTimes;
+	private int pollingLimitTimes;
 	private String url;
 	private String orderTransactionNo;
 	private String status;
-	private String notifyRule;
+	private String pollingRule;
 	
 	public Long getId() {
 		return id;
@@ -33,17 +34,17 @@ public class NotifyRecord implements Serializable {
 	public void setEditTime(Date editTime) {
 		this.editTime = editTime;
 	}
-	public int getNotifyTimes() {
-		return notifyTimes;
+	public int getPollingTimes() {
+		return pollingTimes;
 	}
-	public void setNotifyTimes(int notifyTimes) {
-		this.notifyTimes = notifyTimes;
+	public void setPollingTimes(int pollingTimes) {
+		this.pollingTimes = pollingTimes;
 	}
-	public int getNotifyLimitTimes() {
-		return notifyLimitTimes;
+	public int getPollingLimitTimes() {
+		return pollingLimitTimes;
 	}
-	public void setNotifyLimitTimes(int notifyLimitTimes) {
-		this.notifyLimitTimes = notifyLimitTimes;
+	public void setPollingLimitTimes(int pollingLimitTimes) {
+		this.pollingLimitTimes = pollingLimitTimes;
 	}
 	public String getUrl() {
 		return url;
@@ -63,16 +64,17 @@ public class NotifyRecord implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getNotifyRule() {
-		return notifyRule;
+	public String getPollingRule() {
+		return pollingRule;
 	}
-	public void setNotifyRule(String notifyRule) {
-		this.notifyRule = notifyRule;
+	public void setPollingRule(String pollingRule) {
+		this.pollingRule = pollingRule;
 	}
 	@Override
 	public String toString() {
-		return "NotifyRecord [id=" + id + ", createTime=" + createTime + ", editTime=" + editTime + ", notifyTimes="
-				+ notifyTimes + ", notifyLimitTimes=" + notifyLimitTimes + ", url=" + url + ", orderTransactionNo="
-				+ orderTransactionNo + ", status=" + status + ", notifyRule=" + notifyRule + "]";
+		return "OrderPollingRecord [id=" + id + ", createTime=" + createTime + ", editTime=" + editTime
+				+ ", pollingTimes=" + pollingTimes + ", pollingLimitTimes=" + pollingLimitTimes + ", url=" + url
+				+ ", orderTransactionNo=" + orderTransactionNo + ", status=" + status + ", pollingRule=" + pollingRule
+				+ "]";
 	}
 }

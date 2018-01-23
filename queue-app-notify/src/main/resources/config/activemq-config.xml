@@ -37,7 +37,7 @@
 	<!--消息队列KEY-->
 	<bean id="queueKEY" class="org.apache.activemq.command.ActiveMQQueue">
 		<constructor-arg>
-			<value>ORDER_QUERY_QUEUE</value>
+			<value>ORDER_NOTIFY_QUEUE</value>
 		</constructor-arg>
 	</bean>
 	

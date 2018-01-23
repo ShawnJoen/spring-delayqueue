@@ -37,7 +37,7 @@ public class IdGeneratorImpl implements IdGenerator {
 	}
 	
 	@Override
-	public Long getNotifyId() {
-		return getId("notify", 123456789);
+	public Long getOrderPollingId() {
+		return getId("orderPolling", 123456789);
 	}
 }

@@ -14,7 +14,17 @@ public class OrderDaoImpl extends BaseDaoImpl implements OrderDao {
 	}
 
 	@Override
+	public void updateOrderByOrderTransactionNo(final Order order) {
+		super.getSqlSession().update(super.getStatement("updateOrderByOrderTransactionNo"), order);
+	}
+	
+	@Override
 	public Order getOrderById(final Long orderId) {
 		return super.getSqlSession().selectOne(super.getStatement("getOrderById"), orderId);
+	}
+
+	@Override
+	public Order getOrderByOrderTransactionNo(final String orderTransactionNo) {
+		return super.getSqlSession().selectOne(super.getStatement("getOrderByOrderTransactionNo"), orderTransactionNo);
 	}
 }

@@ -1,0 +1,228 @@
+[2018-01-23 23:23:00:601] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:00:603] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:00:607] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:23:01:758] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:771] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:793] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:23:01:825] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:23:01:857] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:23:01:860] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:23:01:860] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:128)]
+支付结果 *未知 继续轮询查询
+
+[2018-01-23 23:23:01:874] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:01:875] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:01:875] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:23:01:890] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:891] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:893] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:23:01:896] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:23:01:908] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:23:01:910] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:23:01:910] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:128)]
+支付结果 *未知 继续轮询查询
+
+[2018-01-23 23:23:01:922] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:01:923] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:01:923] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:23:01:935] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:936] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:01:938] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:23:01:940] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:23:01:956] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:23:01:959] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:23:01:960] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:128)]
+支付结果 *未知 继续轮询查询
+
+[2018-01-23 23:23:31:116] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:31:116] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:23:31:117] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:23:31:127] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:31:128] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:23:31:129] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:23:31:131] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:23:31:142] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:23:31:144] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:23:31:145] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:128)]
+支付结果 *未知 继续轮询查询
+
+[2018-01-23 23:25:16:456] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:25:16:456] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:25:16:459] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:25:16:490] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:25:16:490] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"未支付","status":"NOTPAY"}
+
+[2018-01-23 23:25:16:492] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:25:16:494] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:25:16:509] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:25:16:511] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:25:16:512] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:128)]
+支付结果 *未知 继续轮询查询
+
+[2018-01-23 23:28:21:770] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:28:21:770] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012322955805049294962690
+
+[2018-01-23 23:28:21:770] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012322955805049294962690]
+
+[2018-01-23 23:28:21:858] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"支付失败","status":"FAILED"}
+
+[2018-01-23 23:28:21:859] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"支付失败","status":"FAILED"}
+
+[2018-01-23 23:28:21:860] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:28:21:862] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012322955805049294962690(String)
+
+[2018-01-23 23:28:21:873] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:28:21:877] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361570733993513987, orderTransactionNo=18012322955805049294962690, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 22:10:56 CST 2018]
+
+[2018-01-23 23:28:21:877] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:108)]
+支付结果为 *失败 结束订单
+
+[2018-01-23 23:28:21:878] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: UPDATE `Order` SET `status`=? WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:28:21:880] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: FAILED(String), 18012322955805049294962690(String)
+
+[2018-01-23 23:28:21:891] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-23 23:30:09:805] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:93)]
+银行渠道编号: WEIXINPAY_IMPL, 平台交易流水号: 18012323955823755442016257
+
+[2018-01-23 23:30:09:807] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:24)]
+银行渠道(WEIXINPAY_IMPL) 银行渠道交易流水号: 18012323955823755442016257
+
+[2018-01-23 23:30:09:813] [INFO ] [method:com.queue.utils.HttpUtils.post(HttpUtils.java:64)]
+Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求值:[orderTransactionNo=18012323955823755442016257]
+
+[2018-01-23 23:30:10:950] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:30)]
+银行渠道(WEIXINPAY_IMPL) 返回结果: {"message":"支付成功","status":"SUCCESS"}
+
+[2018-01-23 23:30:10:972] [INFO ] [method:com.queue.banks.impl.WeixinPayImpl.orderQuery(WeixinPayImpl.java:37)]
+银行渠道(WEIXINPAY_IMPL) 解析返回结果: {"message":"支付成功","status":"SUCCESS"}
+
+[2018-01-23 23:30:10:994] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:30:11:020] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 18012323955823755442016257(String)
+
+[2018-01-23 23:30:11:057] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==      Total: 1
+
+[2018-01-23 23:30:11:060] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:99)]
+平台订单当前信息: Order [id=6361589439981179907, orderTransactionNo=18012323955823755442016257, bankTypeCode=ALIPAY_IMPL, productName=测试商品, status=WAITING_PAYMENT, createTime=Tue Jan 23 23:25:16 CST 2018]
+
+[2018-01-23 23:30:11:060] [INFO ] [method:com.queue.order.service.impl.OrderServiceImpl.completeTrade(OrderServiceImpl.java:117)]
+支付结果为 *成功 结束订单
+
+[2018-01-23 23:30:11:061] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: UPDATE `Order` SET `status`=? WHERE `orderTransactionNo`=? 
+
+[2018-01-23 23:30:11:062] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: SUCCESS(String), 18012323955823755442016257(String)
+
+[2018-01-23 23:30:11:116] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+

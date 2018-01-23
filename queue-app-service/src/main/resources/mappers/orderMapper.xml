@@ -4,12 +4,19 @@
 <mapper namespace="com.queue.order.dao.impl.OrderDaoImpl">
 
  	<insert id="insertOrder" parameterType="com.queue.order.dto.Order">
-	INSERT INTO `Order`(`id`,`orderTransactionNo`,`productName`,`status`,`createTime`) 
-		VALUES (#{id}, #{orderTransactionNo}, #{productName}, #{status}, #{createTime})
+	INSERT INTO `Order`(`id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime`) 
+		VALUES (#{id}, #{orderTransactionNo}, #{bankTypeCode}, #{productName}, #{status}, #{createTime})
 	</insert>
 
 	<select id="getOrderById" parameterType="Long" resultType="com.queue.order.dto.Order">
-		SELECT `id`,`orderTransactionNo`,`productName`,`status`,`createTime` FROM `Order` WHERE `id`=#{orderId}
+	SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `id`=#{orderId}
 	</select>
 
+	<select id="getOrderByOrderTransactionNo" parameterType="String" resultType="com.queue.order.dto.Order">
+	SELECT `id`,`orderTransactionNo`,`bankTypeCode`,`productName`,`status`,`createTime` FROM `Order` WHERE `orderTransactionNo`=#{orderTransactionNo}
+	</select>
+	
+ 	<update id="updateOrderByOrderTransactionNo" parameterType="com.queue.order.dto.Order">
+	UPDATE `Order` SET `status`=#{status} WHERE `orderTransactionNo`=#{orderTransactionNo}
+	</update>
 </mapper>

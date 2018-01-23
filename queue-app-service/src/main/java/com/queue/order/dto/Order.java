@@ -7,6 +7,7 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = -2443925280636977778L;
 	private Long id;//订单编号
 	private String orderTransactionNo;//交易流水号26位
+	private String bankTypeCode;
 	private String productName;
 	private String status;
 	private Date createTime;
@@ -22,6 +23,12 @@ public class Order implements Serializable {
 	}
 	public void setOrderTransactionNo(String orderTransactionNo) {
 		this.orderTransactionNo = orderTransactionNo;
+	}
+	public String getBankTypeCode() {
+		return bankTypeCode;
+	}
+	public void setBankTypeCode(String bankTypeCode) {
+		this.bankTypeCode = bankTypeCode;
 	}
 	public String getProductName() {
 		return productName;
@@ -43,7 +50,7 @@ public class Order implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", orderTransactionNo=" + orderTransactionNo + ", productName=" + productName
-				+ ", status=" + status + ", createTime=" + createTime + "]";
+		return "Order [id=" + id + ", orderTransactionNo=" + orderTransactionNo + ", bankTypeCode=" + bankTypeCode
+				+ ", productName=" + productName + ", status=" + status + ", createTime=" + createTime + "]";
 	}
 }

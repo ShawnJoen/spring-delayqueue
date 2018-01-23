@@ -4,6 +4,8 @@ import com.queue.order.dto.Order;
 
 public interface OrderDao {
 	
-	void insertOrder(final Order order);
-	Order getOrderById(final Long orderId);
+	void insertOrder(Order order);
+	void updateOrderByOrderTransactionNo(Order order);
+	Order getOrderById(Long orderId);
+	Order getOrderByOrderTransactionNo(String orderTransactionNo);
 }

@@ -1,17 +1,18 @@
 package com.queue.controller;
 
+import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.queue.order.service.OrderService;
-import com.queue.utils.Common;
 
 @RestController
 public class TestController {
@@ -29,36 +30,41 @@ public class TestController {
 
 		return orderService.createOrder();
 	}
-	
-	/**
-	 * 平台异步通知订单结果接口(接收异步消息后判断远程银行订单支付状态 如成功/失败时 修改本地订单状态):
-	 * http://127.0.0.1:8080/queue-web-gateway/order-notify?orderTransactionNo=
-	 */
-	@RequestMapping(value = "/order-notify", method = RequestMethod.GET)
-	public Map<String, Object> orderNotify(Locale locale, Model model) {
 
-		return Common.output("1", "WAITING_PAYMENT", "等待支付");
-	}
-	
 	/**
 	 * 平台订单详情接口:
 	 * http://127.0.0.1:8080/queue-web-gateway/query?orderId=
 	 */
 	@RequestMapping(value = "/query", method = RequestMethod.GET)
-	public Map<String, Object> query(@RequestParam("orderId") Long orderId, Locale locale, Model model) {
-		
+	public Map<String, Object> query(@RequestParam(value="orderId", required=false, defaultValue="0") Long orderId, 
+			Locale locale, Model model) {
+
 		return orderService.getOrderById(orderId);
 	}
 	
 	/**
-	 * 远程银行查询订单状态接口 演示地址:
-	 * http://127.0.0.1:8080/queue-web-gateway/bank-query?orderTransactionNo=
+	 * 平台异步通知订单结果接口(银行异步回调返回支付结果):
+	 * http://127.0.0.1:8080/queue-web-gateway/orderNotify
 	 */
-	@RequestMapping(value = "/bank-query", method = RequestMethod.GET)
-	public Map<String, Object> bankQuery(Locale locale, Model model) {
+	@RequestMapping(value = "/orderNotify", method = RequestMethod.GET)
+	public Map<String, Object> orderNotify(Locale locale, Model model) {
+		return null;
+	}
+
+	/**
+	 * 远程银行查询订单状态接口(假设) 演示地址:
+	 * http://127.0.0.1:8080/queue-web-gateway/bankQuery?orderTransactionNo=
+	 */
+	@RequestMapping(value = "/bankQuery", method = {RequestMethod.GET, RequestMethod.POST})
+	public Map<String, String> bankQuery(@ModelAttribute("orderTransactionNo") String orderTransactionNo,
+			Locale locale, Model model) {
+		logger.info("银行(假设) 平台交易流水号: {}", orderTransactionNo);
 		
-		return Common.output("1", "WAITING_PAYMENT", "等待支付");
-		//return Common.output("2", "FAILED", "支付失败");
-		//return Common.output("0", "SUCCESS", "支付成功");
+		Map<String, String> result = new HashMap();
+		result.put("status", "SUCCESS"); result.put("message", "支付成功");
+		//result.put("status", "FAILED"); result.put("message", "支付失败");
+		//result.put("status", "NOTPAY"); result.put("message", "未支付");
+		
+		return result;
 	}
 }

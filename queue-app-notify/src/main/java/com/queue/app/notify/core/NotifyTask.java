@@ -2,11 +2,8 @@ package com.queue.app.notify.core;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
 
 public class NotifyTask implements Runnable, Delayed {
 	private static final Logger logger = LoggerFactory.getLogger(NotifyTask.class);
