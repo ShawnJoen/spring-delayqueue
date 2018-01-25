@@ -29,6 +29,12 @@ public class Common {
 		return sdf.format(new Date());
 	}
 	
+	final public static String getDateTimeNow(Date data) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat(Common.DATEFORMAT_YYYY_MM_DDHH_MM_SS);
+		return sdf.format(data);
+	}
+	
 	final public static String getOrderIdDateTimeNow() {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat(Common.DATEFORMAT_YYMMDDHH);

@@ -226,3 +226,159 @@ Http Post请求地址:http://127.0.0.1:8080/queue-web-gateway/bankQuery, 请求�
 [2018-01-23 23:30:11:116] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
 <==    Updates: 1
 
+[2018-01-24 22:57:36:363] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:33)]
+订单轮询接收消息: {"createTime":1516803480115,"pollingLimitTimes":0,"pollingTimes":0,"id":6361934898025223171,"orderTransactionNo":"18012422956169214270451713"}
+
+[2018-01-24 22:57:36:741] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 22:57:36:772] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361934898025223171(Long), 2018-01-24 22:18:00.115(Timestamp), 2018-01-24 22:57:36.458(Timestamp), 0(Integer), 0(Integer), 18012422956169214270451713(String), CREATED(String), null(String)
+
+[2018-01-24 22:57:36:807] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 22:57:36:855] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:33)]
+订单轮询接收消息: {"createTime":1516803752779,"pollingLimitTimes":0,"pollingTimes":0,"id":6361936039593137155,"orderTransactionNo":"18012422956170357948100610"}
+
+[2018-01-24 22:57:36:861] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 22:57:36:865] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361936039593137155(Long), 2018-01-24 22:22:32.779(Timestamp), 2018-01-24 22:57:36.855(Timestamp), 0(Integer), 0(Integer), 18012422956170357948100610(String), CREATED(String), null(String)
+
+[2018-01-24 22:57:36:876] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:00:33:834] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:33)]
+订单轮询接收消息: {"createTime":1516806012370,"pollingLimitTimes":0,"pollingTimes":0,"id":6361945518804063235,"orderTransactionNo":"18012423956179835351232513"}
+
+[2018-01-24 23:00:34:202] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:00:34:233] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361945518804063235(Long), 2018-01-24 23:00:12.37(Timestamp), 2018-01-24 23:00:33.916(Timestamp), 0(Integer), 5(Integer), 18012423956179835351232513(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:00:34:309] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:01:27:646] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:33)]
+订单轮询接收消息: {"createTime":1516806087495,"pollingLimitTimes":0,"pollingTimes":0,"id":6361945832168903683,"orderTransactionNo":"18012423956180150456709121"}
+
+[2018-01-24 23:01:27:655] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:01:27:660] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361945832168903683(Long), 2018-01-24 23:01:27.495(Timestamp), 2018-01-24 23:01:27.647(Timestamp), 0(Integer), 5(Integer), 18012423956180150456709121(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:01:27:680] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:09:46:692] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:32)]
+订单轮询接收消息: {"createTime":1516806585489,"pollingLimitTimes":0,"pollingTimes":0,"id":6361947923260134403,"orderTransactionNo":"18012423956182239186624514"}
+
+[2018-01-24 23:09:47:277] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:09:47:310] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361947923260134403(Long), 2018-01-24 23:09:45.489(Timestamp), 2018-01-24 23:09:46.812(Timestamp), 0(Integer), 5(Integer), 18012423956182239186624514(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:09:47:314] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:09:59:359] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:32)]
+订单轮询接收消息: {"createTime":1516806599206,"pollingLimitTimes":0,"pollingTimes":0,"id":6361947978486535171,"orderTransactionNo":"18012423956182296728281089"}
+
+[2018-01-24 23:09:59:370] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:09:59:379] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361947978486535171(Long), 2018-01-24 23:09:59.206(Timestamp), 2018-01-24 23:09:59.359(Timestamp), 0(Integer), 5(Integer), 18012423956182296728281089(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:09:59:383] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:11:32:772] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:32)]
+订单轮询接收消息: {"createTime":1516806692604,"pollingLimitTimes":0,"pollingTimes":0,"id":6361948370188391427,"orderTransactionNo":"18012423956182688463691777"}
+
+[2018-01-24 23:11:32:781] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:11:32:789] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361948370188391427(Long), 2018-01-24 23:11:32.604(Timestamp), 2018-01-24 23:11:32.772(Timestamp), 0(Integer), 5(Integer), 18012423956182688463691777(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:11:32:808] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:11:43:366] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:32)]
+订单轮询接收消息: {"createTime":1516806703254,"pollingLimitTimes":0,"pollingTimes":0,"id":6361948414673179651,"orderTransactionNo":"18012423956182733141417985"}
+
+[2018-01-24 23:11:43:903] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:11:43:940] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361948414673179651(Long), 2018-01-24 23:11:43.254(Timestamp), 2018-01-24 23:11:43.56(Timestamp), 0(Integer), 5(Integer), 18012423956182733141417985(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:11:43:996] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:39:32:845] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:36)]
+订单轮询接收消息: {"createTime":1516808360096,"pollingLimitTimes":0,"pollingTimes":0,"id":6361955366086136835,"orderTransactionNo":"18012423956189682427760642"}
+
+[2018-01-24 23:39:33:245] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:39:33:283] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361955366086136835(Long), 2018-01-24 23:39:20.096(Timestamp), 2018-01-24 23:39:32.93(Timestamp), 0(Integer), 5(Integer), 18012423956189682427760642(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:39:33:302] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:39:33:347] [INFO ] [method:com.queue.app.orderpolling.core.OrderPollingQueue.addTaskDelayQueue(OrderPollingQueue.java:31)]
+传过来的对象加到延时队列: OrderPollingRecord [id=6361955366086136835, createTime=Wed Jan 24 23:39:20 CST 2018, editTime=Wed Jan 24 23:39:32 CST 2018, pollingTimes=0, pollingLimitTimes=5, orderTransactionNo=18012423956189682427760642, status=CREATED, pollingRule={1:0,2:1,3:2,4:5,5:15}]
+
+[2018-01-24 23:39:57:631] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:36)]
+订单轮询接收消息: {"createTime":1516808397476,"pollingLimitTimes":0,"pollingTimes":0,"id":6361955521053086723,"orderTransactionNo":"18012423956189839219232770"}
+
+[2018-01-24 23:39:57:643] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:39:57:650] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361955521053086723(Long), 2018-01-24 23:39:57.476(Timestamp), 2018-01-24 23:39:57.632(Timestamp), 0(Integer), 5(Integer), 18012423956189839219232770(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:39:57:657] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:39:57:692] [INFO ] [method:com.queue.app.orderpolling.core.OrderPollingQueue.addTaskDelayQueue(OrderPollingQueue.java:31)]
+传过来的对象加到延时队列: OrderPollingRecord [id=6361955521053086723, createTime=Wed Jan 24 23:39:57 CST 2018, editTime=Wed Jan 24 23:39:57 CST 2018, pollingTimes=0, pollingLimitTimes=5, orderTransactionNo=18012423956189839219232770, status=CREATED, pollingRule={1:0,2:1,3:2,4:5,5:15}]
+
+[2018-01-24 23:40:06:775] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:36)]
+订单轮询接收消息: {"createTime":1516808406604,"pollingLimitTimes":0,"pollingTimes":0,"id":6361955559355470851,"orderTransactionNo":"18012423956189877509033985"}
+
+[2018-01-24 23:40:06:792] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:40:06:798] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361955559355470851(Long), 2018-01-24 23:40:06.604(Timestamp), 2018-01-24 23:40:06.776(Timestamp), 0(Integer), 5(Integer), 18012423956189877509033985(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:40:06:839] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:40:06:883] [INFO ] [method:com.queue.app.orderpolling.core.OrderPollingQueue.addTaskDelayQueue(OrderPollingQueue.java:31)]
+传过来的对象加到延时队列: OrderPollingRecord [id=6361955559355470851, createTime=Wed Jan 24 23:40:06 CST 2018, editTime=Wed Jan 24 23:40:06 CST 2018, pollingTimes=0, pollingLimitTimes=5, orderTransactionNo=18012423956189877509033985, status=CREATED, pollingRule={1:0,2:1,3:2,4:5,5:15}]
+
+[2018-01-24 23:40:07:904] [INFO ] [method:com.queue.app.orderpolling.message.OrderPollingMessageListener.onMessage(OrderPollingMessageListener.java:36)]
+订单轮询接收消息: {"createTime":1516808407774,"pollingLimitTimes":0,"pollingTimes":0,"id":6361955564170531843,"orderTransactionNo":"18012423956189882416369666"}
+
+[2018-01-24 23:40:07:914] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==>  Preparing: INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) VALUES (?, ?, ?, ?, ?, ?, ?, ?) 
+
+[2018-01-24 23:40:07:922] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+==> Parameters: 6361955564170531843(Long), 2018-01-24 23:40:07.774(Timestamp), 2018-01-24 23:40:07.906(Timestamp), 0(Integer), 5(Integer), 18012423956189882416369666(String), CREATED(String), {1:0,2:1,3:2,4:5,5:15}(String)
+
+[2018-01-24 23:40:07:932] [DEBUG] [method:org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:145)]
+<==    Updates: 1
+
+[2018-01-24 23:40:07:985] [INFO ] [method:com.queue.app.orderpolling.core.OrderPollingQueue.addTaskDelayQueue(OrderPollingQueue.java:31)]
+传过来的对象加到延时队列: OrderPollingRecord [id=6361955564170531843, createTime=Wed Jan 24 23:40:07 CST 2018, editTime=Wed Jan 24 23:40:07 CST 2018, pollingTimes=0, pollingLimitTimes=5, orderTransactionNo=18012423956189882416369666, status=CREATED, pollingRule={1:0,2:1,3:2,4:5,5:15}]
+

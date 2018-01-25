@@ -11,6 +11,8 @@ public class OrderQueryResult implements Serializable {
 	 * 		.name()输出Key
 	 */
 	private OrderStatusEnum orderStatusEnum;
+	
+	private boolean stopFlag;
 
 	public OrderStatusEnum getOrderStatusEnum() {
 		return orderStatusEnum;
@@ -18,5 +20,13 @@ public class OrderQueryResult implements Serializable {
 
 	public void setOrderStatusEnum(OrderStatusEnum orderStatusEnum) {
 		this.orderStatusEnum = orderStatusEnum;
+	}
+
+	public boolean isStopFlag() {
+		return stopFlag;
+	}
+
+	public void setStopFlag(boolean stopFlag) {
+		this.stopFlag = stopFlag;
 	}
 }

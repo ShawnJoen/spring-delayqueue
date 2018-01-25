@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queue.orderpolling.dao.impl.OrderPollingDaoImpl">
+ 	<insert id="insertOrderPollingRecord" parameterType="com.queue.orderpolling.dto.OrderPollingRecord">
+	INSERT INTO `OrderPollingRecord`(`id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule`) 
+		VALUES (#{id}, #{createTime}, #{editTime}, #{pollingTimes}, #{pollingLimitTimes}, #{orderTransactionNo}, #{status}, #{pollingRule})
+	</insert>
+
+	<select id="getOrderPollingRecordByOrderTransactionNo" parameterType="String" resultType="com.queue.orderpolling.dto.OrderPollingRecord">
+	SELECT `id`,`createTime`,`editTime`,`pollingTimes`,`pollingLimitTimes`,`orderTransactionNo`,`status`,`pollingRule` FROM `OrderPollingRecord` WHERE `orderTransactionNo`=#{orderTransactionNo}
+	</select>
+	
+ 	<update id="updateOrderPollingRecordByOrderTransactionNo" parameterType="com.queue.orderpolling.dto.OrderPollingRecord">
+	UPDATE `OrderPollingRecord` SET `editTime`=#{editTime}, `pollingTimes`=#{pollingTimes}, `status`=#{status} WHERE `orderTransactionNo`=#{orderTransactionNo}
+	</update>
+</mapper>

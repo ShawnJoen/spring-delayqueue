@@ -8,4 +8,6 @@
 	<import resource="classpath:config/spring-context-service.xml"/>
 	
 	<import resource="classpath:config/activemq-config.xml" />
+	
+	<import resource="classpath:config/orderpolling-config.xml" />
 </beans>

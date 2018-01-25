@@ -2,14 +2,14 @@ package com.queue.app.orderpolling.entity;
 
 import java.util.Map;
 
-public class OrderPollingParam {
+public class NotifyParam {
 
     /**
      * 通知规则(通知延时时间)
      */
     private Map<Integer, Integer> notifyParams;
 
-    private String successValue;
+    private int milliSecond;
 
     public Map<Integer, Integer> getNotifyParams() {
         return notifyParams;
@@ -19,12 +19,12 @@ public class OrderPollingParam {
         this.notifyParams = notifyParams;
     }
 
-    public String getSuccessValue() {
-        return successValue;
+    public int getMilliSecond() {
+        return milliSecond;
     }
 
-    public void setSuccessValue(String successValue) {
-        this.successValue = successValue;
+    public void setMilliSecond(int milliSecond) {
+        this.milliSecond = milliSecond;
     }
 
     /**

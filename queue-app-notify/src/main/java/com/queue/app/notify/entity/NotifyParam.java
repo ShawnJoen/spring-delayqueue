@@ -9,22 +9,12 @@ public class NotifyParam {
      */
     private Map<Integer, Integer> notifyParams;
 
-    private String successValue;
-
     public Map<Integer, Integer> getNotifyParams() {
         return notifyParams;
     }
 
     public void setNotifyParams(Map<Integer, Integer> notifyParams) {
         this.notifyParams = notifyParams;
-    }
-
-    public String getSuccessValue() {
-        return successValue;
-    }
-
-    public void setSuccessValue(String successValue) {
-        this.successValue = successValue;
     }
 
     /**

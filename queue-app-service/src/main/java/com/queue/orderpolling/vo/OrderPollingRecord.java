@@ -1,7 +1,10 @@
-package com.queue.orderpolling.dto;
+package com.queue.orderpolling.vo;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Map;
+
+import com.alibaba.fastjson.JSONObject;
 
 public class OrderPollingRecord implements Serializable {
 	private static final long serialVersionUID = 9041484953450585661L;
@@ -11,10 +14,16 @@ public class OrderPollingRecord implements Serializable {
 	private Date editTime;
 	private int pollingTimes;
 	private int pollingLimitTimes;
-	private String url;
+	private String bankTypeCode;
+//	private String url;
 	private String orderTransactionNo;
 	private String status;
 	private String pollingRule;
+	
+	//最后轮询时间
+	private Date lastPollingTime;
+	//轮询执行时间(时间戳)
+	private long pollingExecuteTime;
 	
 	public Long getId() {
 		return id;
@@ -46,12 +55,18 @@ public class OrderPollingRecord implements Serializable {
 	public void setPollingLimitTimes(int pollingLimitTimes) {
 		this.pollingLimitTimes = pollingLimitTimes;
 	}
-	public String getUrl() {
-		return url;
+	public String getBankTypeCode() {
+		return bankTypeCode;
 	}
-	public void setUrl(String url) {
-		this.url = url;
+	public void setBankTypeCode(String bankTypeCode) {
+		this.bankTypeCode = bankTypeCode;
 	}
+	//	public String getUrl() {
+//		return url;
+//	}
+//	public void setUrl(String url) {
+//		this.url = url;
+//	}
 	public String getOrderTransactionNo() {
 		return orderTransactionNo;
 	}
@@ -70,11 +85,31 @@ public class OrderPollingRecord implements Serializable {
 	public void setPollingRule(String pollingRule) {
 		this.pollingRule = pollingRule;
 	}
+    /**
+     * 获取通知规则的Map<String, Integer>.
+     * @return
+     */
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public Map<String, Integer> getPollingRuleMap(){
+        return (Map) JSONObject.parseObject(getPollingRule());
+    }
+	public Date getLastPollingTime() {
+		return lastPollingTime;
+	}
+	public void setLastPollingTime(Date lastPollingTime) {
+		this.lastPollingTime = lastPollingTime;
+	}
+	public long getPollingExecuteTime() {
+		return pollingExecuteTime;
+	}
+	public void setPollingExecuteTime(long pollingExecuteTime) {
+		this.pollingExecuteTime = pollingExecuteTime;
+	}
 	@Override
 	public String toString() {
 		return "OrderPollingRecord [id=" + id + ", createTime=" + createTime + ", editTime=" + editTime
-				+ ", pollingTimes=" + pollingTimes + ", pollingLimitTimes=" + pollingLimitTimes + ", url=" + url
+				+ ", pollingTimes=" + pollingTimes + ", pollingLimitTimes=" + pollingLimitTimes
 				+ ", orderTransactionNo=" + orderTransactionNo + ", status=" + status + ", pollingRule=" + pollingRule
-				+ "]";
+				+ ", lastPollingTime=" + lastPollingTime + ", pollingExecuteTime=" + pollingExecuteTime + "]";
 	}
 }

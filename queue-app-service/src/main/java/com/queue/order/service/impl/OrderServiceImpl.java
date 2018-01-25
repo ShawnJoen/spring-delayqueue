@@ -7,7 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.queue.orderpolling.dto.OrderPollingRecord;
+
+import com.queue.orderpolling.vo.OrderPollingRecord;
 import com.queue.orderpolling.vo.OrderQueryResult;
 import com.queue.banks.OrderQueryFacade;
 import com.queue.enums.OrderStatusEnum;
@@ -17,10 +18,9 @@ import com.queue.order.dto.Order;
 import com.queue.order.service.OrderService;
 import com.queue.utils.Common;
 import com.queue.utils.message.MessageSendService;
-import com.queue.utils.properties.EnvProperties;
 import com.queue.utils.redis.id.IdGenerator;
 
-@Service("OrderService")
+@Service("orderService")
 public class OrderServiceImpl implements OrderService {
 	private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 	
@@ -40,13 +40,15 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public Map<String, Object> createOrder() {
 		
+		String bankTypeCode = "ALIPAY_IMPL";//WEIXINPAY_IMPL
+		
 		String orderTransactionNo = Common.createOrderTransactionNo();
 		Date date = new Date();
 		//创建订单
 		Order order = new Order();
 		order.setId(idGenerator.getOrderId());
 		order.setOrderTransactionNo(orderTransactionNo);
-		order.setBankTypeCode("ALIPAY_IMPL");//WEIXINPAY_IMPL
+		order.setBankTypeCode(bankTypeCode);
 		order.setProductName("测试商品");
 		order.setStatus("WAITING_PAYMENT");
 		order.setCreateTime(date);
@@ -56,7 +58,8 @@ public class OrderServiceImpl implements OrderService {
 		OrderPollingRecord orderPollingRecord = new OrderPollingRecord();
 		orderPollingRecord.setId(idGenerator.getOrderPollingId());
 		orderPollingRecord.setCreateTime(date);
-		orderPollingRecord.setUrl(EnvProperties.getProperty("bank.query.url"));
+		orderPollingRecord.setBankTypeCode(bankTypeCode);
+		//orderPollingRecord.setUrl(EnvProperties.getProperty("bank.query.url"));
 		orderPollingRecord.setOrderTransactionNo(orderTransactionNo);
 		messageSendService.sendMessage(orderPollingRecord);
 		
@@ -89,7 +92,7 @@ public class OrderServiceImpl implements OrderService {
 	 */
 	@Transactional("transaction")
 	@Override
-	public boolean completeTrade(final String bankTypeCode, final String orderTransactionNo) {
+	public OrderQueryResult completeTrade(final String bankTypeCode, final String orderTransactionNo) {
 		logger.info("银行渠道编号: {}, 平台交易流水号: {}", bankTypeCode, orderTransactionNo);
 		//根据银行渠道编号 获取指定 银行实体类 查询支付状态
 		OrderQueryFacade orderQueryFacade = (OrderQueryFacade)bankFactory.getService(bankTypeCode);//WEIXINPAY_IMPL, ALIPAY_IMPL
@@ -100,8 +103,9 @@ public class OrderServiceImpl implements OrderService {
 		if (OrderStatusEnum.SUCCESS.name().equals(order.getStatus())
 				|| OrderStatusEnum.FAILED.name().equals(order.getStatus())) {//平台订单状态为 成功/失败 表示已处理订单
 			logger.info("已处理过的订单 无需重复处理: {}", orderTransactionNo);
-			
-			return true;
+
+			orderQueryResult.setStopFlag(true);
+			return orderQueryResult;
 		} else if (OrderStatusEnum.WAITING_PAYMENT.name().equals(order.getStatus())) {//平台订单状态为 等待支付 表示等待处理订单
 			
 			if (OrderStatusEnum.FAILED.name().equals(orderQueryResult.getOrderStatusEnum().name())) {//银行支付结果为 支付失败
@@ -112,7 +116,8 @@ public class OrderServiceImpl implements OrderService {
 				updateOrderByOrderTransactionNo(order);
 				//通知下游
 				//messageSendService.sendMessage(ORDER_NOTIFY_QUEUE);
-				return true;
+				orderQueryResult.setStopFlag(true);
+				return orderQueryResult;
 			} else if (OrderStatusEnum.SUCCESS.name().equals(orderQueryResult.getOrderStatusEnum().name())) {//银行支付结果为 支付成功
 				logger.info("支付结果为 *成功 结束订单");
 				
@@ -121,13 +126,15 @@ public class OrderServiceImpl implements OrderService {
 				updateOrderByOrderTransactionNo(order);
 				//通知下游
 				//messageSendService.sendMessage(ORDER_NOTIFY_QUEUE);
-				return true;
+				orderQueryResult.setStopFlag(true);
+				return orderQueryResult;
 			}
 			
 			//其他支付结果继续轮询直到轮询最大次数结束(可能会有掉单)
 			logger.info("支付结果 *未知 继续轮询查询");
 		}
 		
-		return false;
+		orderQueryResult.setStopFlag(false);
+		return orderQueryResult;
 	}
 }

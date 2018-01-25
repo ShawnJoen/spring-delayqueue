@@ -25,7 +25,6 @@
 				<entry key="5" value="15"/>
 			</map>
 		</property>
-		<property name="successValue" value="SUCCESS"/>
 	</bean>
 
 </beans>

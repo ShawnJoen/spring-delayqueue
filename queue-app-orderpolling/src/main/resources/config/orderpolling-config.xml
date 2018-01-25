@@ -14,18 +14,20 @@
 	   <property name="queueCapacity" value="50"/>
 	</bean>
 
-	<!-- 配置通知参数,时间单位分-->
-	<bean id="orderPollingParam" class="com.queue.app.orderpolling.entity.OrderPollingParam">
-		<property name="orderPollingParams">
+	<!-- 配置通知参数,时间-->
+	<bean id="notifyParam" class="com.queue.app.orderpolling.entity.NotifyParam">
+		<property name="notifyParams">
 			<map>
-				<entry key="1" value="0"/>
+				<entry key="1" value="1"/><!-- (* milliSecond)下一次轮询间隔 -->
 				<entry key="2" value="1"/>
 				<entry key="3" value="2"/>
-				<entry key="4" value="5"/>
-				<entry key="5" value="15"/>
+				<entry key="4" value="2"/>
+				<entry key="5" value="4"/>
+				<entry key="6" value="4"/>
+				<entry key="7" value="10"/>
 			</map>
 		</property>
-		<property name="successValue" value="SUCCESS"/>
+		<property name="milliSecond" value="5000"/><!-- 单位毫秒 -->
 	</bean>
 
 </beans>
