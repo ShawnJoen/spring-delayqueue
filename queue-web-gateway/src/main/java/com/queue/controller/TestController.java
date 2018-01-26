@@ -61,8 +61,8 @@ public class TestController {
 		logger.info("银行(假设) 平台交易流水号: {}", orderTransactionNo);
 		
 		Map<String, String> result = new HashMap();
-		result.put("status", "SUCCESS"); result.put("message", "支付成功");
-		//result.put("status", "FAILED"); result.put("message", "支付失败");
+		//result.put("status", "SUCCESS"); result.put("message", "支付成功");
+		result.put("status", "FAILED"); result.put("message", "支付失败");
 		//result.put("status", "NOTPAY"); result.put("message", "未支付");
 		
 		return result;

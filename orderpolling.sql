@@ -11,7 +11,7 @@ CREATE TABLE `orderPollingRecord` (
   `bankTypeCode` varchar(26) NOT NULL DEFAULT '' COMMENT '银行渠道编号',
   #`url` varchar(2000) NOT NULL DEFAULT '' COMMENT '通知地址 获取订单处理状态',
   `orderTransactionNo` varchar(26) NOT NULL DEFAULT '' COMMENT '平台订单交易流水号',
-  `status` varchar(17) NOT NULL COMMENT 'SUCCESS:成功 FAILED:失败',
+  `status` varchar(20) NOT NULL COMMENT 'SUCCESS:成功 FAILED:失败',
   `pollingRule` varchar(100) DEFAULT NULL DEFAULT '' COMMENT '通知规则json',
   PRIMARY KEY (`id`),
   UNIQUE KEY `u1` (`orderTransactionNo`)

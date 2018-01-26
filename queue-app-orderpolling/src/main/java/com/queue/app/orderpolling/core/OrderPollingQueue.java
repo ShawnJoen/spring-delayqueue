@@ -40,14 +40,14 @@ public class OrderPollingQueue implements Serializable {
             //未超过最大通知次数, 继续下一次通知
 
             Integer nextPollingTimeInterval = orderPollingRecord.getPollingRuleMap().get(
-            			String.valueOf(orderPollingRecord.getPollingTimes() + 1)
+            			orderPollingRecord.getPollingTimes() + 1
             		);//当前发送次数对应的时间间隔数
             
             orderPollingRecord.setPollingExecuteTime(
             			(nextPollingTimeInterval == null ? 0 : nextPollingTimeInterval * notifyParam.getMilliSecond())//延时毫秒数
             			 + orderPollingRecord.getLastPollingTime().getTime()//+最后通知时间
             		);
-
+            logger.info("轮询规则Value: {}, 轮询规则MilliSecond: {}", nextPollingTimeInterval, notifyParam.getMilliSecond());
         	logger.info("轮询编号: {}, 上次通知时间: {}", orderPollingRecord.getId(), Common.getDateTimeNow(orderPollingRecord.getLastPollingTime()));
             App.tasks.put(new OrderPollingTask(orderPollingRecord));
             logger.info("轮询编号: {}, 任务添加成功后,当前队列大小: {}", orderPollingRecord.getId(), App.tasks.size());

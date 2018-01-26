@@ -3,7 +3,6 @@ package com.queue.orderpolling.vo;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
-
 import com.alibaba.fastjson.JSONObject;
 
 public class OrderPollingRecord implements Serializable {
@@ -90,7 +89,7 @@ public class OrderPollingRecord implements Serializable {
      * @return
      */
     @SuppressWarnings({ "unchecked", "rawtypes" })
-    public Map<String, Integer> getPollingRuleMap(){
+    public Map<Integer, Integer> getPollingRuleMap(){
         return (Map) JSONObject.parseObject(getPollingRule());
     }
 	public Date getLastPollingTime() {

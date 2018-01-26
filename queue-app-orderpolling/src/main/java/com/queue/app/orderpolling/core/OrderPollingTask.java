@@ -5,13 +5,14 @@ import java.util.concurrent.TimeUnit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.queue.app.orderpolling.App;
 import com.queue.orderpolling.vo.OrderPollingRecord;
 
 public class OrderPollingTask implements Runnable, Delayed {
 	private static final Logger logger = LoggerFactory.getLogger(OrderPollingTask.class);
 	
-	@Autowired
-    private OrderPollingPersist orderPollingPersist;
+    private OrderPollingPersist orderPollingPersist = App.orderPollingPersist;
 	
 	private long executeTime;
 
